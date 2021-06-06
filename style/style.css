@@ -1,0 +1,168 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+	background:  #F5F3F4;
+	font-family: "Geneva", Geneva, sans-serif;
+}
+
+header {
+	background: #660708;
+	padding: 1.5rem 3.5rem;
+}
+
+header h1 {
+	color: white;
+	display: inline;
+	font-size: 3.5rem;
+	margin: 0;
+}
+
+nav ul {
+	display: inline;
+}
+
+nav ul li{
+	background: #A4161A;
+	display: inline-block;
+	float: right;
+	list-style-type: none;
+	margin: .5rem 1rem; 
+	padding: 1rem 2rem;
+	text-align: center;
+}
+
+nav ul li a, footer ul li a
+{
+	color: #D3D3D3;
+}
+
+nav ul li a:hover, footer ul li a:hover
+{
+	color: #B1A7A6;
+}
+
+nav:after {
+	clear: both;
+}
+
+section.calculator {
+	float: left;
+	padding: 3rem 7.4rem 6rem 7.4rem;
+	width: 50%;
+}
+
+section.text {
+	background: #AFB6C4;
+	float: right;
+	min-height: auto;
+	padding: 1rem 2rem;
+	width: 30%;
+}
+
+.container {
+	background: #D3D3D3;
+	border: 0.1rem solid #A4161A;
+	border-radius: 1rem;
+	margin: -1rem;
+	overflow: auto;
+	padding: 3rem 5rem 3rem 5rem;
+}
+
+.switch {
+	background: none;
+	border: none;
+	width: 100%;
+	font-size: 1.5rem;	
+}
+
+.switch span {
+	background: #BA181B;
+	border-radius: 1rem;
+	padding: 0.5rem 1.5rem;
+	z-index: 9;
+}
+
+.switch:hover {
+	color: #D3D3D3;
+}
+
+select.menu {
+	background: #AFB6C4;
+	color: #A4161A;
+	border-radius: 1rem;
+	float: right;
+	padding: 0.3rem;
+}
+
+button.go {
+	background: #5B97C7;
+	border-color: #A4161A;
+	color: white;
+	margin: 1rem 0;
+	padding: 0.5rem 1rem;
+}
+
+.input, .output.checker, .output.generator {
+	padding: 1rem;
+}
+
+div.data, div.bit {
+	padding: 1rem;
+	text-align: left;
+	width: 40%
+}
+
+.data {
+	float: left;
+}
+
+.bit {
+	float: right;
+}
+
+.output.generator:after {
+	clear: both;
+}
+
+label, textarea {
+	display: block;
+	padding: 0.5rem;
+	width: 80%;
+}
+
+textarea.input, textarea.output.checker {
+	width: 95%;
+}
+
+.hide {
+	display: none;
+}
+
+.focus {
+	font-weight: bold;
+	text-shadow: 0px 0px 10px #E5383B;
+}
+
+footer {
+	background: #B1A7A6;
+	bottom: 0;
+	padding: 1rem;
+	position: fixed;
+	width: 100%;
+}
+
+footer ul {
+	margin: 0;
+}
+
+ footer ul li {
+	display: inline-block;
+	float: center;
+	list-style-type: none;
+	margin: 0rem 2rem;
+	width: 20%;
+	padding: 0;
+ }
