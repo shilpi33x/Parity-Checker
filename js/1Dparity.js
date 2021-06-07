@@ -50,7 +50,7 @@ function CountOnes(inputVal)
 			count++;
 		else if(inputVal[i] != 0)
 		{
-			alert("Incorrect Input: not a binary number");
+			alert("Incorrect Input: not a binary number\nOnly 0s and 1s accepted.");
 			return -1;
 		}
 	}

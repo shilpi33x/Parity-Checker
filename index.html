@@ -6,9 +6,9 @@
 		<title>1D Parity Online | Generate and Check Parity</title>
 	</head>
 	<body>
-		<header>
+		<header class="flex-header">
+		<h1>Parity Generator &#38; Checker</h1>
 		<nav>
-			<h1>Parity Generator &#38; Checker</h1>
 			<ul>
 				<li><a href="#">Home</a></li>
 				<li><a href="#">About</a></li>
@@ -17,57 +17,61 @@
 		</nav>
 		</header>
 		
-		<section class="calculator">
-			<button type="button" class="switch" id="switch-mode" title="Switch between Parity Generator and Parity Checker">
-				<span><span class="focus" id="generator-text">Parity Generator</span> &#8652; <span id="checker-text">Parity Checker</span></span>
-			</button>
-			
-			<div class="container">	
-				<div class="input">
-					<select class="menu" id="even-odd-menu" title="Choose Even or Odd parity">
-						<option class="even" value="even">Even Parity</option>
-						<option class="odd" value="odd">Odd Parity</option>
-					</select>
-					
-					<label class="label" for="input">Input Data</label>
-					<textarea class="textarea input" id="input" placeholder="Enter data bits here"></textarea>
-					
-					<button type="button" class="go" id="go-button" title="Click to perform operation">Compute!</button>
-				</div>
+		<div class="flex-body">
+			<section class="calculator">
+				<button type="button" class="switch" id="switch-mode" title="Switch between Parity Generator and Parity Checker">
+					<span class="switch-text"><span class="focus" id="generator-text">Parity Generator&nbsp;</span> &#8652; <span id="checker-text">&nbsp;Parity Checker</span></span>
+				</button>
 				
-				<div class="output generator" id="generator">
-					<div class="data">
-						<label class="label data" for="output-data">Transmitted Data</label>
-						<textarea class="textarea output data" id="output-data"></textarea>
+				<div class="container">	
+					<div class="input">
+						<select class="menu" id="even-odd-menu" title="Choose Even or Odd parity">
+							<option class="even" value="even">Even Parity</option>
+							<option class="odd" value="odd">Odd Parity</option>
+						</select>
+						
+						<div class="input-form">
+							<label for="input">Input Data</label>
+							<textarea id="input" placeholder="Enter data bits here"></textarea>
+						</div>
+						
+						<button type="button" class="button" id="go-button" title="Click to perform operation">Compute!</button>
 					</div>
 					
-					<div class="bit">
-						<label class="label bit" for="output-bit">Parity Bit</label>
-						<textarea class="textarea output bit" id="output-bit"></textarea>
-					</div>	
+					<div class="output generator" id="generator">
+						<div class="data">
+							<label for="output-data">Transmitted Data</label>
+							<textarea id="output-data"></textarea>
+						</div>
+						
+						<div class="bit">
+							<label for="output-bit">Parity Bit</label>
+							<textarea id="output-bit"></textarea>
+						</div>	
+					</div>
+					
+					<div class="output checker hide" id="checker">
+						<label for="output-check">Error Detection</label>
+						<textarea id="output-check"></textarea>
+					</div>
 				</div>
-				
-				<div class="output hide checker" id="checker">
-					<label class="label" for="output-check">Error Detection</label>
-					<textarea class="textarea output" id="output-check"></textarea>
-				</div>
-			</div>
-		</section>
-		
-		<section class="text">
-			<h2>Parity Checking</h2>
-			<p>It is a simple error detection technique used in transmission of digital data. It ensures accurate data transmission and helps to identify and remove errors caused by factors such as noise.</p>
-			<h3>How it works</h3>
-			<p title="Parity Generation">A parity bit is appended to the original data bits to create data with an even or odd number of 1 bits. The sender then sends this data to the receiver.</p>
-			<p title="Parity Checking">At the receiver end, the number of 1s are checked. The data is considered accurate if the number(even or odd) matches the data transmitted by the sender.</p>
-			<h3>Even Parity</h3>
-			<p>The total number of bits in the received data is expected to be even. Hence if there is an even number of 1s in the data to be transmitted, the parity bit 0 is added; if there is an odd number of 1s, parity bit 1 is added.</p>
-			<h3>Odd Parity</h3>
-			<p>Opposite to even parity: the total number of bits in the received data is supposed to be odd. If there is an odd number of 1s in data to be transmitted, parity bit 0 is added; and if there is an even number of 1s, parity bit 1 is added.</p>
-		</section>
+			</section>
+			
+			<section class="theory">
+				<h2>Parity Checking</h2>
+				<p>It is a simple error detection technique used in transmission of digital data. It ensures accurate data transmission and helps to identify and remove errors caused by factors such as noise.</p>
+				<h3>How it works</h3>
+				<p title="Parity Generation">A parity bit is appended to the original data bits to create data with an even or odd number of 1 bits. The sender then sends this data to the receiver.</p>
+				<p title="Parity Checking">At the receiver end, the number of 1s are checked. The data is considered accurate if the number(even or odd) matches the data transmitted by the sender.</p>
+				<h3>Even Parity</h3>
+				<p>The total number of bits in the received data is expected to be even. Hence if there is an even number of 1s in the data to be transmitted, the parity bit 0 is added; if there is an odd number of 1s, parity bit 1 is added.</p>
+				<h3>Odd Parity</h3>
+				<p>Opposite to even parity: the total number of bits in the received data is supposed to be odd. If there is an odd number of 1s in data to be transmitted, parity bit 0 is added; and if there is an even number of 1s, parity bit 1 is added.</p>
+			</section>
+		</div>
 		
 		<footer>
-			<ul>
+			<ul class="flex-footer">
 				<li>Made by Shilpi Jana</li>
 				<li><a href="#">Home</a></li>
 				<li><a href="#">About</a></li>
