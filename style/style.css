@@ -1,20 +1,30 @@
+html, body {
+	margin: 0;
+	min-height: 100%;
+	height: 100%;
+}
+
 body {
 	background:  #F5F3F4;
 	font-family: "Geneva", Geneva, sans-serif;
-	margin: 0;
 }
 
-.flex-header {
+* {
+	font-size: 1.1vw;
+}
+
+header {
+	background: #660708;
 	display: flex;
 	align-items: stretch;
-	
-	background: #660708;
+	position: sticky;
+	top: 0;
+	z-index: 1;
 }
 
 header h1 {
-	flex-grow: 1;
-	
 	color: white;
+	flex-grow: 1;
 	font-size: 3.5rem;
 	margin: 0;
 	padding: 1.5rem 3.5rem;
@@ -34,15 +44,22 @@ nav ul li {
 }
 
 nav ul li a, footer ul li a {
+	text-decoration: none;
 	color: #D3D3D3;
 }
 
 nav ul li a:hover, footer ul li a:hover {
+	text-decoration: underline;
 	color: #B1A7A6;
+}
+
+footer ul li a:hover {
+	color: black;
 }
 
 .flex-body {
 	display: flex;
+	height: 100%;
 }
 
 .flex-body .calculator {
@@ -51,47 +68,44 @@ nav ul li a:hover, footer ul li a:hover {
 }
 
 .flex-body .theory {
-				
-	flex: 45%;
 	background: #AFB6C4;
+	flex: 45%;
+	height: 100%;
+	overflow: auto;
 	padding: 1rem 2rem;
 }
 
 .switch {
-	display: flex;
-	justify-content: center;
-	
 	background: none;
 	border: none;
+	display: flex;
+	justify-content: center;
 	width: 100%;
-	font-size: 1.5rem;	
 }
 
-.switch .switch-text {
-	display: flex;
-	
+.switch-text {
 	background: #BA181B;
 	border-radius: 1rem;
+	display: flex;
 	padding: 0.5rem 1.5rem;
-	z-index: 9;
+	z-index: 0;
+}
+
+.switch-text span, h2 {
+	font-size: 1.5vw;
 }
 
 .switch:hover {
 	color: #D3D3D3;
 }
 
-.output.checker.hide, .output.generator.hide {
-	display: none;
-}
-
 .container {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	
 	background: #D3D3D3;
 	border: 0.1rem solid #A4161A;
 	border-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	margin: -1rem;
 	overflow: auto;
 }
@@ -100,30 +114,27 @@ nav ul li a:hover, footer ul li a:hover {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-}
-
-.input {
 	padding: 3rem 5rem;
 }
 
 .output.checker {
-	padding: 0rem 5rem 3rem 5rem;
+	padding-top: 0;
 }
 
 .menu {
 	align-self: flex-end;
 	background: #AFB6C4;
-	color: #A4161A;
 	border-radius: 1rem;
-	padding: 0.3rem;
+	color: #A4161A;
 	margin-bottom: -1rem;
+	padding: 0.3rem;
 }
 
 .input-form {
-	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	width: 100%;
 }
 
 .button {
@@ -137,24 +148,29 @@ nav ul li a:hover, footer ul li a:hover {
 .output.generator {
 	display: flex;
 	justify-content: space-between;
-	padding: 0rem 5rem 3rem 5rem;
+	padding: 3rem 5rem;
+	padding-top: 0;
 }
 
 .output.generator div {
-	width: 40%;
 	display: flex;
 	flex-direction: column;
+	width: 40%;
 }
 
 textarea {
-	width: 100%;
-	padding: 0.5rem;
 	margin: 0.5rem 0;
+	padding: 0.5rem;
 	resize: none;
+	width: 100%;
 }
 
 .output.generator .data textarea {
 	resize: both;
+}
+
+.output.checker.hide, .output.generator.hide {
+	display: none;
 }
 
 .focus {
@@ -162,21 +178,48 @@ textarea {
 	text-shadow: 0 0 10px #E5383B;
 }
 
-footer {	
+footer {
 	background: #B1A7A6;
+	position: relative;
 	bottom: 0;
-	position: fixed;
 	width: 100%;
 }
 
 .flex-footer {
 	display:flex;
 	justify-content: space-around;
-	
 	margin: 0;
 }
 
 .flex-footer li {
 	list-style-type: none;
 	padding: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+	.flex-body .calculator {
+		padding: 4rem 5rem;
+	}
+}
+
+@media only screen and (max-width: 1050px) {
+	* {
+		font-size: 2.2vw;
+	}
+	.switch-text span, h2 {
+		font-size: 3vw;
+	}
+	.flex-body {
+		flex-direction: column;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.flex-body .calculator {
+		padding: 4rem;
+	}
+	header h1 {
+		padding-right: 0;
+		padding-left: 2rem;
+	}
 }
